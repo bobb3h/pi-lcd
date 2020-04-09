@@ -17,10 +17,10 @@ def get_ip_address(ifname):
     )[20:24])
 
 while True:
-    mylcd.backlight(0)
     mylcd.lcd_display_string("Time: %s" %time.strftime("%H:%M:%S"), 1)
     mylcd.lcd_display_string(get_ip_address('eth0'), 2)
-    pir.wait_for_motion()
-    mylcd.backlight(1)
-    time.sleep(5)
     mylcd.backlight(0)
+    #pir.wait_for_motion()
+    #mylcd.backlight(1)
+    #time.sleep(5)
+    #mylcd.backlight(0)
