@@ -7,8 +7,8 @@
 ########################################################################
 import RPi.GPIO as GPIO
 
-ledPin = 11       # define ledPin
-sensorPin = 4    # define sensorPin
+ledPin = 12       # define ledPin
+sensorPin = 11    # define sensorPin
 
 def setup():
     GPIO.setmode(GPIO.BOARD)        # use PHYSICAL GPIO Numbering
