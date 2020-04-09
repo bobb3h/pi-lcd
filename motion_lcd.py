@@ -16,9 +16,8 @@ def get_ip_address(ifname):
         struct.pack('256s', ifname[:15])
     )[20:24])
 
-mylcd.backlight(0)
-
 while True:
+    mylcd.backlight(0)
     mylcd.lcd_display_string("Time: %s" %time.strftime("%H:%M:%S"), 1)
     mylcd.lcd_display_string(get_ip_address('eth0'), 2)
     pir.wait_for_motion()
