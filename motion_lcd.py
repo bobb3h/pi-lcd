@@ -1,11 +1,18 @@
 from gpiozero import MotionSensor
+import RPi.GPIO as GPIO
+import time
 import I2C_LCD_driver
 
 pir = MotionSensor(4)
-mylcd = I2C_LCD_driver.lcd()
+switchPin = 11
 
-while True:
-    pir.wait_for_motion()
-    mylcd.backlight(1)
-    pir.wait_for_no_motion()
-    mylcd.backlight(0)
+def setup():
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(switchPin, GPIO.OUT)
+
+def loop():
+    while True:
+        pir_wait_for_motion()
+        GPIO.output(switchPin, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(switchPin, GPIO.LOW)
