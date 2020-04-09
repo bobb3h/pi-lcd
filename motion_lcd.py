@@ -6,13 +6,13 @@ import I2C_LCD_driver
 pir = MotionSensor(4)
 switchPin = 11
 
-def setup():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(switchPin, GPIO.OUT)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(switchPin, GPIO.OUT)
 
-def loop():
-    while True:
-        pir_wait_for_motion()
-        GPIO.output(switchPin, GPIO.HIGH)
-        time.sleep(5)
-        GPIO.output(switchPin, GPIO.LOW)
+while True:
+    pir_wait_for_motion()
+    GPIO.output(switchPin, GPIO.HIGH)
+    time.sleep(5)
+    GPIO.output(switchPin, GPIO.LOW)
+
+
