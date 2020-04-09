@@ -1,4 +1,7 @@
 import I2C_LCD_driver
+import socket
+import fcntl
+import struct
 import time
 
 mylcd = I2C_LCD_driver.lcd()
