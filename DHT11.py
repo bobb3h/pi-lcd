@@ -27,7 +27,7 @@ def loop():
             print("Other error!")
             
         print("Humidity : %.2f, \t Temperature : %.2f \n"%(dht.humidity,dht.temperature))
-        time.sleep(2)       
+        time.sleep(4)
         
 if __name__ == '__main__':
     print ('Program is starting ... ')
